@@ -1,6 +1,7 @@
 package com.example.tripy_v1
 
 import com.example.tripy_v1.models.Login
+import com.example.tripy_v1.models.LoginResponse
 import com.example.tripy_v1.models.User
 import com.example.tripy_v1.models.UserResponse
 import retrofit2.Call
@@ -19,7 +20,7 @@ interface RetroService {
     fun createUser(@Body user: User): Call<UserResponse>
 
     @POST("users/login")
-    fun LoginUser(@Body user: Login): Call<UserResponse>
+    fun loginUser(@Body user: Login): Call<LoginResponse>
 /*
     //=========  https://gorest.co.in   ========//
     //Done

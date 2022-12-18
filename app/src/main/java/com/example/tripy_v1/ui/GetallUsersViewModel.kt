@@ -10,6 +10,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
+
 class GetallUsersViewModel : ViewModel() {
     var UsersLiveData  = MutableLiveData<MutableList<User>>()
     val retrofit = RetrofitInstance.getRetrofit().create(RetroService::class.java)

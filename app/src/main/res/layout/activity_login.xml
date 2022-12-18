@@ -7,99 +7,105 @@
     android:background="@drawable/background"
     tools:context=".ui.LoginActivity">
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:orientation="vertical"
-        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp">
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="253dp"
-            android:src="@drawable/logo" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etLoginEmail"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/input_bg"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textPersonName"
-            android:textColor="#A52323"
-            android:textColorHint="@color/hint"
-            app:startIconContentDescription="Enter Your Email"
-            app:startIconDrawable="@drawable/ic_baseline_email_24">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_bg"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etLoginPassword"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/input_bg"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPersonName"
-            android:textColor="#A52323"
-            android:textColorHint="@color/hint"
-            app:startIconContentDescription="Enter Your Email"
-            app:startIconDrawable="@drawable/ic_baseline_lock_24"
-            tools:ignore="HardcodedText">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_bg"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_marginBottom="15dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg"
-
-            android:text="Login" />
-
-        <Button
-            android:id="@+id/btnBackLoginToMain"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg"
-            android:layout_marginBottom="10dp"
-            android:text="signup" />
+            android:layout_margin="30dp"
+            android:orientation="vertical"
+            app:layout_constraintVertical_bias="0.2"
 
-        <TextView
-            android:id="@+id/tvForgotPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Forgot password"
-            android:textColor="#FFFFFF"
-            android:textStyle="italic"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:textSize="16dp"
-            android:lines="2"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    </LinearLayout>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="253dp"
+                android:src="@drawable/logo" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                android:textColor="#A52323"
+                android:textColorHint="@color/hint"
+                app:startIconContentDescription="Enter Your Email"
+                app:startIconDrawable="@drawable/ic_baseline_email_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_bg"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/input_bg"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPersonName"
+                android:textColor="#A52323"
+                android:textColorHint="@color/hint"
+                app:startIconContentDescription="Enter Your Email"
+                app:startIconDrawable="@drawable/ic_baseline_lock_24"
+                tools:ignore="HardcodedText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_bg"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg"
+                android:text="Login" />
+
+            <Button
+                android:id="@+id/btnBackLoginToMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg"
+                android:layout_marginBottom="10dp"
+                android:text="signup" />
+
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Forgot password"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                android:lines="2"
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 
