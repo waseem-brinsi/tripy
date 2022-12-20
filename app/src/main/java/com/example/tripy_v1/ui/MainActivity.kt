@@ -22,47 +22,19 @@ class MainActivity : AppCompatActivity() {
     private var btnLoginMain: Button? = null
     private var btnGetallUser: Button? = null
 
-    var etLoginEmail: EditText? = null
-    var etLoginPassword: EditText? = null
-    var btnToSignup:Button? = null
-    var btnLogin:Button? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        val log = Login(
-            email= etLoginEmail?.text.toString(),
-            password = etLoginPassword?.text.toString()
-        )
-
-        Log.d("resault",log.email.toString())
-        Log.d("resault",log.password.toString())
-        val retrofit = RetrofitInstance.getRetrofit()
-        val retService : RetroService = retrofit.create(RetroService::class.java)
-
-        var loging =  retService.loginUser(log)
-        loging.enqueue(object : Callback<LoginResponse> {
-            override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
-                if(response.isSuccessful){
-                    Log.d("resault", response.body().toString())
-                }
-            }
-            override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                Log.d("resault", t.message.toString())
-            }
-        })
-
-
-        //Button
+        // Button
         btnGetallUser = findViewById(R.id.btnGetallUser)
         btnGetallUser?.setOnClickListener {
             Intent(this, GetallUsersActivity::class.java).also {
                 startActivity(it)
             }
         }
-
 
         btnSignup = findViewById(R.id.btnSignup)
         btnSignup?.setOnClickListener {

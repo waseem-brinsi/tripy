@@ -1,9 +1,7 @@
 package com.example.tripy_v1
 
-import com.example.tripy_v1.models.Login
-import com.example.tripy_v1.models.LoginResponse
-import com.example.tripy_v1.models.User
-import com.example.tripy_v1.models.UserResponse
+import com.example.tripy_v1.models.*
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -19,8 +17,28 @@ interface RetroService {
     @POST("users/signup")
     fun createUser(@Body user: User): Call<UserResponse>
 
+
     @POST("users/login")
     fun loginUser(@Body user: Login): Call<LoginResponse>
+
+    @POST("users/forgotPassword")
+    fun forgetPassword(@Body email: User): Call<ForgotResponse>
+
+
+    @PATCH("users/resetcode/{RC}")
+    fun resetcode(@Path("RC") RC:String?, @Body NewPassword :  User?):Call<NewPasswordResponse>
+
+
+
+/*
+    @Multipart
+    @PUT("user/photo")
+    fun updateUser(
+        @Part("photo") photo: RequestBody?,
+        @Part("description") description: RequestBody?
+    ): Call<User?>?
+
+ */
 /*
     //=========  https://gorest.co.in   ========//
     //Done

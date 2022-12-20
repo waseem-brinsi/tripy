@@ -8,7 +8,6 @@ import com.example.tripy_v1.RetrofitInstance
 import com.example.tripy_v1.models.Login
 import com.example.tripy_v1.models.LoginResponse
 import retrofit2.Call
-import retrofit2.CallAdapter
 import retrofit2.Callback
 import retrofit2.Response
 
@@ -29,7 +28,5 @@ class LoginViewModel :ViewModel() {
             }
         })
     }
-
-
 
 }

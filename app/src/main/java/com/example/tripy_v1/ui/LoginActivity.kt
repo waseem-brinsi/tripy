@@ -1,30 +1,25 @@
 package com.example.tripy_v1.ui
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import com.example.tripy_v1.R
-import com.example.tripy_v1.RetroService
-import com.example.tripy_v1.RetrofitInstance
 import com.example.tripy_v1.models.Login
-import com.example.tripy_v1.models.LoginResponse
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+
 
 class LoginActivity : AppCompatActivity() {
     var etLoginEmail: EditText? = null
     var etLoginPassword: EditText? = null
     var btnToSignup:Button? = null
     var btnLogin:Button? = null
-
+    var tvForgotPassword:TextView? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
                 password = etLoginPassword?.text.toString()
             )
             //viewModel - observe
-            var viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+            val viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
             viewModel.LoginLiveData.observe(this, Observer {
                 Log.d("resault", it.toString())
             })
@@ -55,5 +50,16 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(it)
             }
         }
+
+
+        // Button ForgotPassword
+        tvForgotPassword = findViewById(R.id.tvForgotPassword)
+        tvForgotPassword?.setOnClickListener {
+            Intent(this,ForgotActivity::class.java).also {
+                startActivity(it)
+            }
+        }
+
+
     }
 }

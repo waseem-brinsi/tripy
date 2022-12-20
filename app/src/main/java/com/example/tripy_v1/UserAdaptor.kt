@@ -23,11 +23,11 @@ class UserAdaptor(val ListUser: MutableList<User>):RecyclerView.Adapter<UserAdap
         holder.itemView.apply {
             val tvName:TextView? = findViewById(R.id.tvName)
             val tvEmail:TextView? = findViewById(R.id.tvEmail)
-            val tvGender:TextView? = findViewById(R.id.tvRole)
+
 
             tvName?.text = ListUser.get(position).name.toString()
             tvEmail?.text = ListUser.get(position).email.toString()
-            tvGender?.text = ListUser.get(position).role.toString()
+
         }
     }
     override fun getItemCount(): Int {
