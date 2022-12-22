@@ -1,4 +1,4 @@
-package com.example.tripy_v1.ui
+package com.example.tripy_v1.ui.ForgotPassword
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -43,7 +43,7 @@ class ForgotActivity : AppCompatActivity() {
             viewModel.forgetPassword(emailUser)
 
 
-            Intent(this,ResetActivity::class.java).also {
+            Intent(this, ResetActivity::class.java).also {
                 it.putExtra("EXTRA_emailUser",emailUser)
                 startActivity(it)
                 finish()

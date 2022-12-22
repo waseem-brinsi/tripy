@@ -3,17 +3,11 @@ package com.example.tripy_v1.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.EditText
 import com.example.tripy_v1.R
-import com.example.tripy_v1.RetroService
-import com.example.tripy_v1.RetrofitInstance
-import com.example.tripy_v1.models.Login
-import com.example.tripy_v1.models.LoginResponse
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.tripy_v1.ui.Home.HomeActivity
+import com.example.tripy_v1.ui.Login.LoginActivity
+import com.example.tripy_v1.ui.Signup.SignupActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         // Button
         btnGetallUser = findViewById(R.id.btnGetallUser)
         btnGetallUser?.setOnClickListener {
-            Intent(this, GetallUsersActivity::class.java).also {
+            Intent(this, HomeActivity::class.java).also {
                 startActivity(it)
             }
         }

@@ -21,12 +21,12 @@ class UserAdaptor(val ListUser: MutableList<User>):RecyclerView.Adapter<UserAdap
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.apply {
-            val tvName:TextView? = findViewById(R.id.tvName)
-            val tvEmail:TextView? = findViewById(R.id.tvEmail)
+            val tvHotelName:TextView? = findViewById(R.id.tvHotelName)
+            val tvRating:TextView? = findViewById(R.id.tvRating)
 
 
-            tvName?.text = ListUser.get(position).name.toString()
-            tvEmail?.text = ListUser.get(position).email.toString()
+            tvHotelName?.text = ListUser.get(position).name.toString()
+            tvRating?.text = ListUser.get(position).email.toString()
 
         }
     }

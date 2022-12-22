@@ -1,4 +1,4 @@
-package com.example.tripy_v1.ui
+package com.example.tripy_v1.ui.ForgotPassword
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +9,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.tripy_v1.R
 import com.example.tripy_v1.models.User
-import kotlin.math.log
 
 class NewPasswordActivity : AppCompatActivity() {
 

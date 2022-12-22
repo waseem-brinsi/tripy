@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">tripy-v1</string>
+    <string name="tunisia">Tunisia</string>
+    <string name="_200dt">200dt</string>
 </resources>

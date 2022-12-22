@@ -1,4 +1,4 @@
-package com.example.tripy_v1.ui
+package com.example.tripy_v1.ui.Signup
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,6 +34,7 @@ class SignupActivity : AppCompatActivity() {
             etEmail = findViewById(R.id.etEmail)
             etpassword = findViewById(R.id.etPassword)
             etPasswordConfirm = findViewById(R.id.etPasswordConfirm)
+            etPhone = findViewById(R.id.etPhone)
 
             //Create User
             val SignUpuser = User(
@@ -43,6 +44,7 @@ class SignupActivity : AppCompatActivity() {
                 passwordConfirm = etPasswordConfirm?.text.toString(),
                 phone = etPhone?.text.toString()
             )
+
 
             var viewModel = ViewModelProvider(this).get(SignupViewModel::class.java)
             viewModel.SignupLiveData.observe(this, Observer {
@@ -55,7 +57,6 @@ class SignupActivity : AppCompatActivity() {
             btnSignupCancel?.setOnClickListener {
                 finish()
             }
-
         }
     }
 }

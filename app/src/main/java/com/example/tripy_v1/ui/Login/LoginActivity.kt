@@ -1,4 +1,4 @@
-package com.example.tripy_v1.ui
+package com.example.tripy_v1.ui.Login
 
 
 import android.content.Intent
@@ -12,6 +12,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.tripy_v1.R
 import com.example.tripy_v1.models.Login
+import com.example.tripy_v1.ui.ForgotPassword.ForgotActivity
+import com.example.tripy_v1.ui.Signup.SignupActivity
 
 
 class LoginActivity : AppCompatActivity() {
@@ -46,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
         //Button SignUp
         btnToSignup = findViewById(R.id.btnBackLoginToMain)
         btnToSignup?.setOnClickListener {
-            Intent(this,SignupActivity::class.java).also {
+            Intent(this, SignupActivity::class.java).also {
                 startActivity(it)
             }
         }
@@ -55,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
         // Button ForgotPassword
         tvForgotPassword = findViewById(R.id.tvForgotPassword)
         tvForgotPassword?.setOnClickListener {
-            Intent(this,ForgotActivity::class.java).also {
+            Intent(this, ForgotActivity::class.java).also {
                 startActivity(it)
             }
         }

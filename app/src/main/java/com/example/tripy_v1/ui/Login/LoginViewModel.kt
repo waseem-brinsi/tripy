@@ -1,4 +1,4 @@
-package com.example.tripy_v1.ui
+package com.example.tripy_v1.ui.Login
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

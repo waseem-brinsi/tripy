@@ -1,4 +1,4 @@
-package com.example.tripy_v1.ui
+package com.example.tripy_v1.ui.ForgotPassword
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.tripy_v1.R
-import com.example.tripy_v1.models.NewPasswordResponse
 import com.example.tripy_v1.models.User
 
 class ResetActivity : AppCompatActivity() {
@@ -32,13 +31,11 @@ class ResetActivity : AppCompatActivity() {
             etResetCode = findViewById(R.id.etResetCode)
             val Code = etResetCode?.text.toString().trim()
 
-            Intent(this,NewPasswordActivity::class.java).also {
+            Intent(this, NewPasswordActivity::class.java).also {
                 it.putExtra("EXT_Code",Code)
                 startActivity(it)
                 finish()
             }
-
-
         }
 
 

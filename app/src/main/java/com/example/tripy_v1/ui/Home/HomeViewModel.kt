@@ -1,4 +1,4 @@
-package com.example.tripy_v1.ui
+package com.example.tripy_v1.ui.Home
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -12,13 +12,13 @@ import retrofit2.Response
 
 
 
-class GetallUsersViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
     var UsersLiveData  = MutableLiveData<MutableList<User>>()
     val retrofit = RetrofitInstance.getRetrofit().create(RetroService::class.java)
 
 
-    fun getUsersList(){
 
+    fun getUsersList(){
         var resault = retrofit.getUsersList()
         resault.enqueue(object : Callback<List<User>> {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
@@ -37,7 +37,6 @@ class GetallUsersViewModel : ViewModel() {
     }
 
     fun GetUserByName(name : String){
-
         var resault = retrofit.searchUser(name)
         resault.enqueue(object : Callback<List<User>>{
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
@@ -50,8 +49,5 @@ class GetallUsersViewModel : ViewModel() {
                 Log.d("TAG",t.message.toString())
             }
         })
-
     }
-
-
 }

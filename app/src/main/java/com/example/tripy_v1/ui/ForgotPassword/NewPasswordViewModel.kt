@@ -1,11 +1,10 @@
-package com.example.tripy_v1.ui
+package com.example.tripy_v1.ui.ForgotPassword
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.tripy_v1.RetroService
 import com.example.tripy_v1.RetrofitInstance
-import com.example.tripy_v1.models.LoginResponse
 import com.example.tripy_v1.models.NewPasswordResponse
 import com.example.tripy_v1.models.User
 import retrofit2.Call
