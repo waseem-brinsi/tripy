@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="20dp"
-    >
+    android:layout_marginRight="10dp">
 
     <TextView
-        android:id="@+id/tv_hotel_name"
+        android:id="@+id/tvCountryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -23,7 +23,6 @@
         tools:visibility="visible" />
 
     <androidx.cardview.widget.CardView
-
         android:id="@+id/cardView"
         android:layout_width="25dp"
         android:layout_height="14dp"
@@ -35,15 +34,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <ImageView
-            android:id="@+id/place_image"
+            android:id="@+id/tvCountryFlag"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-
-            app:srcCompat="@drawable/discovermenuimage1" />
+            app:srcCompat="@drawable/tunisia" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Home.HomeActivity">
+    tools:context=".View.Home.HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
@@ -19,15 +19,15 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/tvWeatherLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="324dp"
 
-            android:text="Find your"
-            android:textColor="#6B7378"
+            android:text="loaction"
+            android:textColor="#000000"
             android:textColorLink="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,16 +36,29 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/tvWeatherDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="Next distination"
+            android:text="Weather"
             android:textColor="#202122"
             android:textColorLink="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tvWeatherLocation"
+            app:layout_constraintTop_toBottomOf="@+id/tvWeatherLocation" />
+
+
+        <ImageView
+            android:id="@+id/imgWeather"
+            android:layout_width="125dp"
+            android:layout_height="79dp"
+            app:layout_constraintBottom_toTopOf="@+id/etSearchUser"
+            app:layout_constraintEnd_toStartOf="@+id/gg"
+            app:layout_constraintHorizontal_bias="0.338"
+            app:layout_constraintStart_toEndOf="@+id/tvWeatherDetail"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.454"
+            app:srcCompat="@drawable/w04d" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/gg"
@@ -84,8 +97,8 @@
             android:textColorHint="#657D83"
             app:layout_constraintEnd_toEndOf="@+id/gg"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintStart_toStartOf="@+id/tvWeatherDetail"
+            app:layout_constraintTop_toBottomOf="@+id/tvWeatherDetail" />
 
         <Button
             android:id="@+id/btnSearch"
@@ -140,19 +153,22 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDiscover"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:orientation="horizontal" />
+            android:layout_height="18dp"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp" />
         <!-- TopPlace -->
         <TextView
             android:id="@+id/tvTopPlace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="15dp"
             android:text="Top Places"
             android:textColor="@android:color/background_dark"
             android:textSize="16sp"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvUsers"
+            android:id="@+id/rvPlaces"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/btnBackGetusersToMain"
