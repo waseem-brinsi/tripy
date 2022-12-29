@@ -1,22 +1,18 @@
 package com.example.tripy_v1.Adaptor
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tripy_v1.R
 import com.example.tripy_v1.Models.User
-import com.example.tripy_v1.View.Home.HomeActivity
 import android.content.Intent
-import androidx.core.content.ContextCompat.startActivity
 import com.example.tripy_v1.View.Home.DetailsActivity
 
 
-class UserAdaptor1(val ListUser: MutableList<User>):RecyclerView.Adapter<UserAdaptor1.ViewHolder>(){
+class UserAdaptor(val ListUser: MutableList<User>):RecyclerView.Adapter<UserAdaptor.ViewHolder>(){
 
     inner class ViewHolder(val item:View):RecyclerView.ViewHolder(item){
         val tvHotelName:TextView? = itemView.findViewById(R.id.tvHotelName)

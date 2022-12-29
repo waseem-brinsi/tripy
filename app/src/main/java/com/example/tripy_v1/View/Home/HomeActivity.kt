@@ -70,11 +70,10 @@ class HomeActivity : AppCompatActivity() {
         rvDiscover?.adapter = DiscoverAdaptor(listCountry)
         rvDiscover?.layoutManager = LinearLayoutManager(this@HomeActivity,LinearLayoutManager.HORIZONTAL,false)
 
-        //
 
 
+        //all Places - view model
         var Token ="name "+intent.getStringExtra("EXT_Token")
-        //all users - view model
         val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         viewModel.PlacesLiveData.observe(this, Observer {
             Log.d("resault", it.toString())

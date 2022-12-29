@@ -1,6 +1,5 @@
 package com.example.tripy_v1.Adaptor
 
-
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +13,10 @@ import com.example.tripy_v1.Models.Place
 import com.example.tripy_v1.Utils.NodejsRetrofitInstance.ServerUrl
 import com.example.tripy_v1.View.Home.DetailsActivity
 import com.squareup.picasso.Picasso
+
+
+
+
 
 
 class PlaceAdaptor(val ListPlace: MutableList<Place>):RecyclerView.Adapter<PlaceAdaptor.ViewHolder>(){
@@ -31,16 +34,23 @@ class PlaceAdaptor(val ListPlace: MutableList<Place>):RecyclerView.Adapter<Place
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-      //  http://192.168.1.17:8000/img/new-tour-1.jpg
-        val url = ServerUrl+"img/"+ListPlace.get(position).image
+        //http://192.168.1.17:8000/img/new-tour-1.jpg
+        val url = ServerUrl+"img/"+ ListPlace[position].image
         Log.d("img",url)
         Picasso.get().load(url).fit().centerCrop().into(holder.place_image)
-        holder.tvHotelName?.text = ListPlace.get(position).name
-            holder.tvRating?.text = ListPlace.get(position).rating.toString()
-            holder.tvPlaceDis?.text = ListPlace.get(position).description
-            holder.item.setOnClickListener {
+        val name = ListPlace[position].name
+        val description = ListPlace[position].description
+        val rating = ListPlace[position].rating.toString()
+        val img = ListPlace[position].image
+        holder.tvHotelName?.text = name
+        holder.tvRating?.text = rating
+        holder.tvPlaceDis?.text = description
+        holder.item.setOnClickListener {
                 val intent = Intent(it.context, DetailsActivity::class.java)
-                //intent.putExtra("item_id", item.id)
+                intent.putExtra("EXT_name", name)
+                intent.putExtra("EXT_description", description)
+                intent.putExtra("EXT_rating", rating)
+                intent.putExtra("EXT_img", url)
                 it.context.startActivity(intent)
             }
     }
