@@ -1,6 +1,8 @@
 package com.example.tripy_v1.Utils
 
 import com.example.tripy_v1.Models.*
+import okhttp3.MultipartBody
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -31,4 +33,12 @@ interface NodejsRetroService {
 
     @GET("places")
     fun searchPlace(@Query(value = "name") searchText:String,@Header("authorization") auth: String):Call <List<Place>>
+
+    //Upload Image
+
+    @Multipart
+    @POST("upload")
+    fun uploadImage(@Part image: MultipartBody.Part): Call<ResponseBody>
+
+
 }

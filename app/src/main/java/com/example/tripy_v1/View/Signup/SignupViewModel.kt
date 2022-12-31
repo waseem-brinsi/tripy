@@ -30,4 +30,11 @@ class SignupViewModel:ViewModel() {
             }
         })
     }
+
+/*
+    fun uploadimage(){
+
+    }
+
+ */
 }

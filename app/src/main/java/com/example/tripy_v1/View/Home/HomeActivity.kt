@@ -97,6 +97,9 @@ class HomeActivity : AppCompatActivity() {
             })
             viewModel.GetPlaceByName(name,Token)
         }
+
+
+
         //Button Back
         btnBackGetusersToMain = findViewById(R.id.btnBackGetusersToMain)
         btnBackGetusersToMain?.setOnClickListener {

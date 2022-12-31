@@ -8,6 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 
+
 object NodejsRetrofitInstance {
     val ServerUrl = "http://192.168.1.17:8000/"
     val baseUrl = ServerUrl+"api/v1/"
@@ -16,6 +17,8 @@ object NodejsRetrofitInstance {
           logging.level = (HttpLoggingInterceptor.Level.BODY)
           val client = OkHttpClient.Builder()
           client.addInterceptor(logging)
+
+
 
           return Retrofit.Builder()
               .baseUrl(baseUrl)

@@ -76,7 +76,7 @@
                 android:layout_height="64dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-
+                android:background="#A1494949"
                 app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
         </androidx.cardview.widget.CardView>
