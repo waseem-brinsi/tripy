@@ -39,8 +39,8 @@ class UpdateUserActivity : AppCompatActivity() {
         tvUpdateEmail = findViewById(R.id.tvUpdateEmail)
         tvUpdatePhone = findViewById(R.id.tvUpdatePhone)
 
-        val email = intent.getStringExtra("EXT_Email")
-        Log.d("email", email.toString())
+        val Email = intent.getStringExtra("EXT_Email")
+        Log.d("email", Email.toString())
 
         //viewModel - observe
         val viewModel = ViewModelProvider(this).get(UpdateUserViewModel::class.java)
@@ -57,8 +57,8 @@ class UpdateUserActivity : AppCompatActivity() {
             tvUpdateEmail.text = "Email :"+it.get(0).email
             tvUpdatePhone.text = "Phone :"+it.get(0).phone
         })
-        if (email != null) {
-            viewModel.searchUser(email)
+        if (Email != null) {
+            viewModel.searchUser(Email)
         }
 
         //update Button
@@ -77,7 +77,7 @@ class UpdateUserActivity : AppCompatActivity() {
         val btnHome1:ImageView = findViewById(R.id.btnHome1)
         btnHome1?.setOnClickListener {
             Intent(this,HomeActivity::class.java).also {
-                //it.putExtra("EXT_Email",Email)
+                it.putExtra("EXT_Email",Email)
                 finish()
             }
         }
@@ -87,7 +87,7 @@ class UpdateUserActivity : AppCompatActivity() {
         val btnAccounte1:ImageView = findViewById(R.id.btnAccounte1)
         btnAccounte1?.setOnClickListener {
             Intent(this,UpdateUserActivity::class.java).also {
-               // it.putExtra("EXT_Email",Email)
+               //it.putExtra("EXT_Email",Email)
                 startActivity(it)
             }
         }

@@ -22,6 +22,7 @@ import com.example.tripy_v1.Models.Place
 import com.example.tripy_v1.R
 import com.example.tripy_v1.Utils.NodejsRetroService
 import com.example.tripy_v1.Utils.NodejsRetrofitInstance
+import com.example.tripy_v1.View.Home.HomeActivity
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -49,6 +50,9 @@ class NewHotelActivity : AppCompatActivity() {
 
             supportActionBar?.setDisplayHomeAsUpEnabled(false)
             supportActionBar?.setTitle("Add New Hotel")
+
+        val Email = intent.getStringExtra("EXT_Email")
+        val code = intent.getStringExtra("EXT_Token")
 
 
             imgNewHotel = findViewById(R.id.imgNewHotel)
@@ -81,13 +85,17 @@ class NewHotelActivity : AppCompatActivity() {
                         Log.d("resault", it.toString())
                     })
                     viewModel.AddNewHotel(newhotel)
+
+
+                    Intent(this,HomeActivity::class.java).also {
+                        it.putExtra("EXT_Email",Email)
+                        it.putExtra("EXT_Token",code)
+                        finish()
+                    }
                 }
 
-            //Cancel Button
-            val btnNewHotelCancel = findViewById<Button>(R.id.btnNewHotelCancel)
-            btnNewHotelCancel?.setOnClickListener {
-                finish()
-            }
+
+
         }
 
 

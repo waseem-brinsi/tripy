@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
     var btnToSignup:Button? = null
     var btnLogin:Button? = null
     var tvForgotPassword:TextView? = null
-    lateinit var Email : String
+    var Email : String? = null
     lateinit var myuser : User
     var Token :String? = null
 

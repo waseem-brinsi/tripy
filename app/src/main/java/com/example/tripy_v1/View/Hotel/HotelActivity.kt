@@ -1,8 +1,5 @@
-package com.example.tripy_v1.View.Home
+package com.example.tripy_v1.View.Hotel
 
-import android.annotation.SuppressLint
-import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -17,48 +14,43 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tripy_v1.Adaptor.DiscoverAdaptor
-import com.example.tripy_v1.R
 import com.example.tripy_v1.Adaptor.PlaceAdaptor
 import com.example.tripy_v1.Models.Country
+import com.example.tripy_v1.R
 import com.example.tripy_v1.View.Account.UpdateUserActivity
-import com.example.tripy_v1.View.Hotel.HotelActivity
-import com.example.tripy_v1.View.NewPlaceAndHotel.NewHotelActivity
-import com.example.tripy_v1.View.NewPlaceAndHotel.NewPlaceActivity
+import com.example.tripy_v1.View.Home.HomeActivity
+import com.example.tripy_v1.View.Home.HomeViewModel
+import com.example.tripy_v1.View.Home.HomeWeatherViewModel
 import com.squareup.picasso.Picasso
-import java.nio.file.attribute.AclEntry
 
+class HotelActivity : AppCompatActivity() {
 
-
-
-class HomeActivity : AppCompatActivity() {
     var btnAccounte:ImageView? = null
     var btnAddNew:ImageView? = null
-    var btnSearch:Button? = null
-    var etSearchUser:EditText? = null
-    var tvWeatherLocation:TextView? = null
-    var tvWeatherDetail:TextView? = null
+    var btnSearch: Button? = null
+    var etSearchUser: EditText? = null
+    var tvWeatherLocation1: TextView? = null
+    var tvWeatherDetail1: TextView? = null
     var imgWeather:ImageView? = null
     var name:String? = null
     var Token:String? = null
 
-    @SuppressLint("SetTextI18n")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-
-
+        setContentView(R.layout.activity_hotel)
 
         //View Model Weather
         val WeatherViewModel = ViewModelProvider(this).get(HomeWeatherViewModel::class.java)
         WeatherViewModel.WeatherLiveData.observe(this, Observer {
             Log.d("weather", it.toString())
-            tvWeatherLocation = findViewById(R.id.tvWeatherLocation)
-            tvWeatherDetail = findViewById(R.id.tvWeatherDetail)
+            tvWeatherLocation1 = findViewById(R.id.tvWeatherLocation1)
+            tvWeatherDetail1 = findViewById(R.id.tvWeatherDetail1)
             imgWeather = findViewById(R.id.imgWeather)
 
-            tvWeatherLocation?.text = it.sys.country+","+it.name
+            tvWeatherLocation1?.text = it.sys.country+","+it.name
             val deg = it.main.temp.toString()
-            tvWeatherDetail?.text = it.weather[0].description+","+deg.subSequence(0,2)
+            tvWeatherDetail1?.text = it.weather[0].description+","+deg.subSequence(0,2)
 
             val url = "https://openweathermap.org/img/wn/"+it.weather[0].icon+".png"
             Picasso.get().load(url).into(imgWeather);
@@ -69,18 +61,6 @@ class HomeActivity : AppCompatActivity() {
         WeatherViewModel.GetWeather(lat,lon,appid)
 
 
-        //Discover - list of Country
-        val listCountry:MutableList<Country> = arrayListOf()
-        listCountry.add(Country("Algeria",R.drawable.algeria))
-        listCountry.add(Country("egypt", R.drawable.egypt))
-        listCountry.add(Country("germany", R.drawable.germany))
-        listCountry.add(Country("morocco", R.drawable.morocco))
-        listCountry.add(Country("tunisia", R.drawable.tunisia))
-        listCountry.add(Country("russia", R.drawable.russia))
-        val rvDiscover :RecyclerView? = findViewById(R.id.rvDiscover)
-        rvDiscover?.adapter = DiscoverAdaptor(listCountry)
-        rvDiscover?.layoutManager = LinearLayoutManager(this@HomeActivity,LinearLayoutManager.HORIZONTAL,false)
-
 
 
         val Email = intent.getStringExtra("EXT_Email")
@@ -88,7 +68,7 @@ class HomeActivity : AppCompatActivity() {
 
         //all Places - view model
 
-         Token ="name "+code
+        Token ="name "+code
         val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
         viewModel.PlacesLiveData.observe(this, Observer {
             Log.d("resault", it.toString())
@@ -113,62 +93,35 @@ class HomeActivity : AppCompatActivity() {
             viewModel.GetPlaceByName(name,Token!!)
         }
 
-//---------------------------
+
         //Button home
         val btnHome: ImageView = findViewById(R.id.btnHome)
         btnHome?.setOnClickListener {
-            Intent(this,HomeActivity::class.java).also {
+            Intent(this, HomeActivity::class.java).also {
                 it.putExtra("EXT_Token",code)
-                it.putExtra("EXT_Email",Email)
+                it.putExtra("EXT_Token",Email)
                 startActivity(it)
                 finish()
             }
         }
 
-        //Button hotel
-        val btnHotels : ImageView = findViewById(R.id.btnHotels)
-        btnHotels.setOnClickListener {
-            Intent(this,HotelActivity::class.java).also {
-                it.putExtra("EXT_Token",code)
-                it.putExtra("EXT_Email",Email)
-                startActivity(it)
-                //finish()
-            }
-        }
 
         //Button add
         btnAddNew = findViewById(R.id.btnAddNew)
         btnAddNew?.setOnClickListener {
-            showDialog(this)
+            //showDialog(this)
         }
 
         //Button update
         btnAccounte = findViewById(R.id.btnAccounte)
         btnAccounte?.setOnClickListener {
-            Intent(this,UpdateUserActivity::class.java).also {
+            Intent(this, UpdateUserActivity::class.java).also {
                 it.putExtra("EXT_Email",Email)
                 startActivity(it)
             }
         }
 
-    }
 
-    fun showDialog(context: Context) {
-        val builder = AlertDialog.Builder(context)
-        builder.setTitle("Adding  ")
-        builder.setMessage("Choosing Between Place Or Hotel")
-        builder.setPositiveButton("New Place") { dialog, which ->
-            Intent(context, NewPlaceActivity::class.java).also {
-                startActivity(it)
-            }
-        }
-        builder.setNeutralButton("New Hotel"){ dialog, which ->
 
-            Intent(context, NewHotelActivity::class.java).also {
-                startActivity(it)
-            }
-        }
-        val dialog = builder.create()
-        dialog.show()
-         }
     }
+}

@@ -110,7 +110,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!-- Signup -->
+            <!-- New Place -->
             <Button
                 android:id="@+id/btnNewPlaceAdd"
                 android:layout_width="match_parent"
@@ -118,14 +118,7 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/btn_bg"
                 android:text="Add New Place" />
-            <!-- Login -->
-            <Button
-                android:id="@+id/btnNewPlaceCancel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/btn_bg"
-                android:text="Cancel" />
+
         </LinearLayout>
 
     </ScrollView>

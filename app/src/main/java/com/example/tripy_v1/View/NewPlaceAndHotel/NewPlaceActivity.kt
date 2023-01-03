@@ -52,6 +52,11 @@ class NewPlaceActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setTitle("Add New Place")
 
+
+        val Email = intent.getStringExtra("EXT_Email")
+        val code = intent.getStringExtra("EXT_Token")
+
+
         imgNewPlace = findViewById(R.id.imgNewPlace)
         imgNewPlace.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
@@ -83,12 +88,14 @@ class NewPlaceActivity : AppCompatActivity() {
             })
             viewModel.AddNewPlace(newplace)
 
+            Intent(this,HomeActivity::class.java).also {
+                it.putExtra("EXT_Email",Email)
+                it.putExtra("EXT_Token",code)
+                finish()
+            }
+
         }
-        //Cancel Button
-        val btnNewPlaceCancel = findViewById<Button>(R.id.btnNewPlaceCancel)
-        btnNewPlaceCancel?.setOnClickListener {
-            finish()
-        }
+
 
     }
 

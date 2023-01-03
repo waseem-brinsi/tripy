@@ -21,7 +21,9 @@
         android:theme="@style/Theme.Tripyv1"
         tools:ignore="HardcodedDebugMode"
         tools:targetApi="31">
-
+        <activity
+            android:name=".View.Hotel.HotelActivity"
+            android:exported="false" />
         <activity
             android:name=".View.NewPlaceAndHotel.NewHotelActivity"
             android:exported="false" />
