@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.tripy_v1.R
 import com.example.tripy_v1.Models.Login
+import com.example.tripy_v1.Models.User
 import com.example.tripy_v1.View.ForgotPassword.ForgotActivity
 import com.example.tripy_v1.View.Home.HomeActivity
 import com.example.tripy_v1.View.Signup.SignupActivity
@@ -24,6 +25,8 @@ class LoginActivity : AppCompatActivity() {
     var btnToSignup:Button? = null
     var btnLogin:Button? = null
     var tvForgotPassword:TextView? = null
+    lateinit var Email : String
+    lateinit var myuser : User
     var Token :String? = null
 
 
@@ -46,9 +49,11 @@ class LoginActivity : AppCompatActivity() {
             viewModel.LoginLiveData.observe(this, Observer {
                 try {
                     val Token = it.token
+                    Email = it.email!!
                     if (Token!=null){
                         Intent(this, HomeActivity::class.java).also {
                             it.putExtra("EXT_Token",Token)
+                            it.putExtra("EXT_Email",Email)
                             startActivity(it)
                             finish()
                         }
@@ -73,6 +78,7 @@ class LoginActivity : AppCompatActivity() {
         tvForgotPassword = findViewById(R.id.tvForgotPassword)
         tvForgotPassword?.setOnClickListener {
             Intent(this, ForgotActivity::class.java).also {
+                it.putExtra("EXT_Email",Email)
                 startActivity(it)
             }
         }

@@ -9,11 +9,17 @@ import retrofit2.http.*
 
 interface NodejsRetroService {
 
+    //update User
+    @POST("users")
+    fun updateMe(@Header("authorization") auth: String,
+                @Body user: User)
+    :Call <UserUpdateResponse>
+
     @GET("users")
     fun getUsersList():Call <List<User>>
 
     @GET("users")
-    fun searchUser(@Query(value = "name") searchText:String):Call<List<User>>
+    fun searchUser(@Query(value = "email") searchText:String):Call<List<User>>
 
     @POST("users/signup")
     fun createUser(@Body user: User): Call<SignUpResponse>
@@ -26,7 +32,9 @@ interface NodejsRetroService {
 
     @PATCH("users/resetcode/{RC}")
     fun resetcode(@Path("RC") RC:String?, @Body NewPassword :  User?):Call<NewPasswordResponse>
-
+    //------------------------------------| Place Api |------------------------------------//
+    //
+    //
     //get Places
     @GET("places")
     fun getallplaces(@Header("authorization") auth: String):Call <List<Place>>
@@ -34,11 +42,18 @@ interface NodejsRetroService {
     @GET("places")
     fun searchPlace(@Query(value = "name") searchText:String,@Header("authorization") auth: String):Call <List<Place>>
 
-    //Upload Image
 
+    //Upload Image
     @Multipart
     @POST("upload")
-    fun uploadImage(@Part image: MultipartBody.Part): Call<ResponseBody>
+    fun uploadImage(@Part image: MultipartBody.Part): Call<ImageResponse>
 
+
+    @POST("places")
+    fun createplace(@Body newplace: Place): Call<PlaceResponse>
+
+
+    @POST("hotels")
+    fun createhotel(@Body newhotel: Hotel): Call<HotelResponse>
 
 }

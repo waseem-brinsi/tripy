@@ -118,7 +118,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/btnBackGetusersToMain"
+        app:layout_constraintBottom_toTopOf="@+id/llNavigation"
         app:layout_constraintTop_toBottomOf="@+id/weather_image">
         <!-- Discover -->
         <LinearLayout
@@ -147,7 +147,7 @@
                 android:layout_marginEnd="16dp"
                 android:text="See All"
                 android:textColor="@android:color/background_dark"
-                android:textSize="12sp"/>
+                android:textSize="12sp" />
         </LinearLayout>
         <!-- RecyclerView Discover -->
         <androidx.recyclerview.widget.RecyclerView
@@ -165,26 +165,58 @@
             android:padding="15dp"
             android:text="Top Places"
             android:textColor="@android:color/background_dark"
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvPlaces"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toTopOf="@+id/btnBackGetusersToMain"
             tools:layout_editor_absoluteX="0dp" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnBackGetusersToMain"
+
+
+    <LinearLayout
+        android:id="@+id/llNavigation"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Back"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_500"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
+        <ImageView android:id="@+id/btnHome"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_home_24" />
 
+        <ImageView android:id="@+id/btnHotels"
+            android:layout_width="28dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_location_city_24" />
+
+        <ImageView android:id="@+id/btnAddNew"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_add_to_photos_24" />
+
+        <ImageView android:id="@+id/btnAccounte"
+            android:layout_width="38dp"
+            android:layout_height="24dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

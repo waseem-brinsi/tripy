@@ -7,6 +7,11 @@
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/btn_bg.xml" value="0.2995" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/ic_arrow_back_black_24dp.xml" value="0.198" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.196" />
+        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/ic_baseline_account_circle_24_2.xml" value="0.268" />
+        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/ic_baseline_add_to_photos_24.xml" value="0.223" />
+        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.223" />
+        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/ic_baseline_image_24.xml" value="0.3675" />
+        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/ic_baseline_location_city_24.xml" value="0.223" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.196" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/icon02d.xml" value="0.28" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/icon03d.xml" value="0.28" />
@@ -14,6 +19,7 @@
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/drawable/search_bg.xml" value="0.198" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/font/rubik.xml" value="0.396875" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_details.xml" value="0.33" />
+        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_forgot.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_getall_users.xml" value="0.33" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_home.xml" value="0.36666666666666664" />
@@ -21,13 +27,15 @@
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_login.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_main.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_my_account.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_new_hotel.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_new_password.xml" value="0.22" />
-        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_new_place.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_new_place.xml" value="0.33" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_reset.xml" value="0.23802083333333332" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/activity_splash_screen.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/discover_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/discover_menu_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/upadetuser.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/wetcci/AndroidStudioProjects/tripyv1/app/src/main/res/layout/users_item.xml" value="0.25" />
       </map>
     </option>

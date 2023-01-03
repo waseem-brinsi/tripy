@@ -30,6 +30,7 @@ class ForgotActivity : AppCompatActivity() {
             etResetEmail = findViewById(R.id.etResetEmail)
             val email = etResetEmail?.text.toString().trim()
             val emailUser = User(
+                photo = null,
                 email = email,
                 name = null,
                 phone = null,

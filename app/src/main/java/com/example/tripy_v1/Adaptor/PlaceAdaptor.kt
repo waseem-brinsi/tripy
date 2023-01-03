@@ -41,7 +41,6 @@ class PlaceAdaptor(val ListPlace: MutableList<Place>):RecyclerView.Adapter<Place
         val name = ListPlace[position].name
         val description = ListPlace[position].description
         val rating = ListPlace[position].rating.toString()
-        val img = ListPlace[position].image
         holder.tvHotelName?.text = name
         holder.tvRating?.text = rating
         holder.tvPlaceDis?.text = description

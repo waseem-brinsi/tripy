@@ -4,16 +4,14 @@
     package="com.example.tripy_v1">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
-        android:requestLegacyExternalStorage="true"
+        android:debuggable="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,12 +19,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tripyv1"
+        tools:ignore="HardcodedDebugMode"
         tools:targetApi="31">
+
         <activity
-            android:name=".View.NewPlaceActivity"
+            android:name=".View.NewPlaceAndHotel.NewHotelActivity"
             android:exported="false" />
         <activity
-            android:name=".View.Account.MyAccountActivity"
+            android:name=".View.NewPlaceAndHotel.NewPlaceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".View.Account.UpdateUserActivity"
             android:exported="false" />
         <activity
             android:name=".View.Home.DetailsActivity"

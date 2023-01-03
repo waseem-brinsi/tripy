@@ -32,6 +32,7 @@ class NewPasswordActivity : AppCompatActivity() {
 
 
             var NewPassword = User(
+                photo = null,
                 name = null,
                 email = null,
                 password = etNewPassword?.text.toString(),
